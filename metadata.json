@@ -1,0 +1,5 @@
+{
+  "name": "DualForge-Tagger",
+  "description": "An application to generate descriptive tags for images. Users can upload a single image to get copyable text tags, or a batch of images in a ZIP file to download a new ZIP containing corresponding text files for each image. Two styles are available: 'Flux' for natural language captions and 'Illustrious' for LoRA-style training tags.",
+  "requestFramePermissions": []
+}
