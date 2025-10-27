@@ -112,21 +112,6 @@ To build and experiment with these on‑device models, the process generally inv
 
 ---
 
-## 🧠 Prompt Instruction (used in the app)
-
-```
-You are an AI image captioning assistant. For each image, return:
-
-### Flux:
-A short natural language caption describing the image emotionally or poetically.
-
-### Illustrious:
-A comma‑separated list of visual tags for AI training, such as: 
-1girl, brown hair, long hair, hoodie, smile, outdoors, anime style
-```
-
----
-
 ## 👤 Author
 
 Made by [Romario Martinus (megaaziib)](https://github.com/aziib)  
