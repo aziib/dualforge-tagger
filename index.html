@@ -87,6 +87,25 @@
       </div>
     </div>
   </main>
+  <!-- Developer Instructions Section -->
+  <section class="mt-12 bg-gray-800 p-6 rounded-lg border border-gray-700 max-w-4xl w-full">
+    <h3 class="text-lg font-semibold text-cyan-300 mb-3">For Web Developers (Using Gemini Nano via APIs)</h3>
+    <p class="text-sm text-gray-400 mb-2">
+      Gemini Nano is exposed through Chrome's built-in AI APIs (Prompt API, Summarizer API, Writer API, etc.) that enable on-device AI capabilities for web applications and Chrome extensions.
+    </p>
+    <ul class="list-disc list-inside text-gray-400 text-sm space-y-1">
+      <li><span class="font-semibold">Prerequisites:</span> Use a Chrome Dev or Canary build (version&nbsp;127 or higher). Ensure your device meets the necessary hardware requirements (sufficient RAM, VRAM and storage).</li>
+      <li><span class="font-semibold">Enable Flags:</span> Navigate to <code>chrome://flags</code> and enable the following experimental flags:
+        <ul class="list-disc list-inside pl-4 space-y-1">
+          <li><code>#prompt-api-for-gemini-nano</code> → set to “Enabled”</li>
+          <li><code>#optimization-guide-on-device-model</code> → set to “Enabled BypassPrefRequirement” (or a similar option)</li>
+        </ul>
+      </li>
+      <li><span class="font-semibold">Model Download:</span> Go to <code>chrome://components</code>, locate <em>Optimization Guide On Device Model</em> and click <em>Check for Update</em>. The model downloads in the background when your device is eligible.</li>
+      <li><span class="font-semibold">Verification:</span> Open the Developer Console (F12 or Option+⌘+J on Mac) and run <code>await ai.canCreateTextSession()</code>. A return value of <code>'readily'</code> confirms the model is ready.</li>
+      <li><span class="font-semibold">Use the APIs:</span> Interact with Gemini Nano in your JavaScript via the exposed APIs (e.g. <code>ai.createTextSession()</code> for the Prompt API). These APIs enable on-device summarization, translation, proofreading and more — delivering speed and privacy by processing locally.</li>
+    </ul>
+  </section>
   <!-- Inline script containing the app logic.  We avoid external modules to ensure compatibility when opening via file://. -->
   <script>
     // Application state

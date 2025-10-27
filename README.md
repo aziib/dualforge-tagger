@@ -1,10 +1,10 @@
 # DualForge‑Tagger  
 **Offline image tagging with dual AI styles: Flux and Illustrious.**
 
-DualForge‑Tagger is a browser‑based AI tagging tool that runs completely offline using Chrome’s built-in Prompt API powered by Gemini Nano. Upload a single image or a ZIP of multiple images to generate two types of tags:
+DualForge‑Tagger is a browser‑based AI tagging tool that runs completely offline using Chrome’s built‑in Prompt API powered by Gemini Nano. Upload a single image or a ZIP of multiple images to generate two types of tags:
 
-- **Flux** — natural language, poetic-style descriptions  
-- **Illustrious** — structured LoRA-style comma-separated tags (e.g. `1girl, black hair, hoodie, cityscape`)  
+- **Flux** — natural language, poetic‑style descriptions  
+- **Illustrious** — structured LoRA‑style comma‑separated tags (e.g. `1girl, black hair, hoodie, cityscape`)  
 
 Perfect for artists, LoRA creators, dataset builders, and AI trainers.
 
@@ -15,21 +15,21 @@ Perfect for artists, LoRA creators, dataset builders, and AI trainers.
 - 🖼️ **Single image mode**: View & copy tags directly.
 - 📦 **Batch mode (ZIP)**: Upload multiple images and get a ZIP with matching `.txt` tag files.
 - 🔐 **Fully offline**: No cloud, no API keys, no data leaves your browser.
-- ⚙️ Powered by Chrome’s **Prompt API** running **on-device** with Gemini Nano.
+- ⚙️ Powered by Chrome’s **Prompt API** running **on‑device** with Gemini Nano.
 
 ---
 
 ## 🚀 Getting Started
 
 ### Requirements
-- Chrome browser with built-in AI support (Prompt API + Gemini Nano enabled).
+- Chrome browser with built‑in AI support (Prompt API + Gemini Nano enabled).
 - No server, no dependencies — runs directly in browser.
 
 ### How to Use
 1. Open `index.html` in Chrome.
 2. Upload an image or a ZIP file of images.
 3. Tags are generated locally and displayed (or exported as a new ZIP).
-4. Copy results or download your dataset-ready package.
+4. Copy results or download your dataset‑ready package.
 
 ---
 
@@ -89,10 +89,26 @@ tagged_images.zip
 ## 🛠️ Roadmap
 
 - [ ] Export CSV (filename + tags)
-- [ ] Drag-and-drop UI
+- [ ] Drag‑and‑drop UI
 - [ ] Multilingual tag output (Japanese / Indonesian)
 - [ ] Tag editing before export
 - [ ] Integration with AI training toolkits
+
+---
+
+## For Web Developers (Using Gemini Nano via APIs)
+
+Gemini Nano is exposed to developers through Chrome’s built‑in AI APIs (like the Prompt API, Summarizer API, Writer API, etc.) that enable on‑device AI capabilities for web applications and Chrome extensions.
+
+To build and experiment with these on‑device models, the process generally involves:
+
+- **Prerequisites:** Use a Chrome Dev or Canary build (version 127 or higher). Ensure your device meets the necessary hardware requirements (sufficient RAM, VRAM and storage).
+- **Enable Flags:** In `chrome://flags` enable the following:
+  - `#prompt-api-for-gemini-nano` → set to “Enabled”
+  - `#optimization-guide-on-device-model` → set to “Enabled BypassPrefRequirement” (or a similar option)
+- **Model Download:** Visit `chrome://components`, find *Optimization Guide On Device Model* and click **Check for Update**. This triggers the model download when your device is eligible.
+- **Verification:** Open the developer console (press F12 or Option+⌘+J on Mac) and run `await ai.canCreateTextSession()`. A return value of `readily` confirms the model is ready.
+- **Use the APIs:** Interact with Gemini Nano via JavaScript using the exposed APIs (e.g. `ai.createTextSession()` for the Prompt API). These APIs enable on‑device summarization, translation, proofreading and more, offering speed and privacy.
 
 ---
 
@@ -105,7 +121,7 @@ You are an AI image captioning assistant. For each image, return:
 A short natural language caption describing the image emotionally or poetically.
 
 ### Illustrious:
-A comma-separated list of visual tags for AI training, such as: 
+A comma‑separated list of visual tags for AI training, such as: 
 1girl, brown hair, long hair, hoodie, smile, outdoors, anime style
 ```
 
